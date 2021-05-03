@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  color: #333;
+  background-color: #fff;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.8;
+}
+
+.h1 {
+  margin: 0.67em 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+.header {
+  background: url(../../img/intro_background.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header_content {
+  padding-top: 200px;
+  padding-bottom: 140px;
+  text-align: center;
+}
+
+/* header content */
+.header_block {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.header_title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul li {
+  list-style-type: none;
+}
+
+.header_subtitle {
+  padding-left: 0;
+}
+
+.header_content li {
+  display: inline-block;
+  font-size: 15px;
+  color: #e6e6e6;
+}
+
+.span_padding {
+  padding-right: 13px;
+  padding-left: 13px;
+}
+
+/*Social Media*/
+
+.social-icon {
+  margin-bottom: 60px;
+  float: right !important;
+}
