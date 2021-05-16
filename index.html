@@ -8,72 +8,91 @@
 		
 		<!-- STYLESHEETS -->
        
-        <link rel="stylesheet" href="assets/css/css3.css">
+        <!--    <link rel="stylesheet" href="assets/css/css3.css">      -->
+        <link rel="stylesheet" href="assets/css/canvas.css">
+
 
     </head>
     <body>
         <div class = "content_wrapper">
 
-            <header class = "header">
-                <div class = "container">
-                    <nav classs="navbar">
-                        <div class="navbar-header">
-                            
-                        </div>
-                        <div class="navbar-collapse">
-                            <ul class="nav">
-                                <li>
-                                    <a href="#">HOME</a>
-                                </li>
-                                <li>
-                                    <a href="#">ABOUT</a>
-                                </li>
-                                <li>
-                                    <a href="#">SKILL</a>
-                                </li>
-                                <li>
-                                    <a href="#">PORTFOLIO</a>
-                                </li>
-                                <li>
-                                    <a href="#">BLANK</a>
-                                </li>
-                                <li>
-                                    <a href="#">BLANK</a>
-                                </li>
-                                <li>
-                                    <a href="#">CONTACT</a>
-                                </li>
+            <!-- Top of screens -->
+            <section class = "header">
+                <canvas id="canvas_background"></canvas>
+
+                <div class= "content-container">
+
+                    <nav class="navbar">
+                        <div class="container">
+                            <a id = "home" href="#">Andrew Brown</a>
+
+                            <ul class = navbar-right>
+                                <li><a href="#">HOME</a></li>
+                                <li><a href="#">ABOUT</a></li>
+                                <li><a href="#">SKILL</a></li> 
+                                <li><a href="#">PORTFOLIO</a></li> 
+                                <li><a href="#">TEAM</a></li> 
+                                <li><a href="#">BLOG</a></li> 
+                                <li><a href="#">CONTACT</a></li> 
                             </ul>
-                            
                         </div>
-                    </nav>
+                      </nav>
 
-                    <div class ="header_content">
 
-                        <span class="header_block">HELLO
+                    <div class="header__content text-center text_white">
+                    
+                        <span class="header_text">HELLO</span>
 
-                        </span>
-                        <h1 class="header_title">I'M ANDREW BROWN
+                        <h1 class="header_text">I'M ANDREW BROWN</h1>
+                        <h1>Computer Science Student</h1>
+                        <h2> 
+                            <span class="header_text_subtitle" id = "magic_text"
+                        
+                            data-info = 'Hard Working.,Fast Learner.,Confident.,Motivated.,Dedicated., Creative!'
+                            data-timer = "50">
+                          
+                            </span>
 
-                        </h1>
+                        </h2>
 
-                        <ul class ="header_subtitle">
-                            <li>COMPUTER SCIENCE
-                                <span class ="span_padding">-</span>
+                      </div>
+
+
+
+                    <div class = "social-media-content">
+                        <ul>
+                            <li>
+                                <a href="#" class = "LinkedIn_icon social_icon"></a>
+                                <a href="#" class = "github_icon"></a>
+                                <a href="#" class = "fiverr_icon"></a>
                             </li>
-                            <li>PHOTOGRAPHAR<span class="span_padding">-</span></li>
                         </ul>
-
-                    </div>
-
+                    </div>          
                 </div>
+            </section>
 
-            </header>
+
+            <!-- projects of screens -->
+            <section class = "section_about">
+                <div>
+                    <h1> projects of screens</h1>
+                  
+
+                </div> 
+            </section>
 
         </div>
         
 
-        <!-- SCRIPTS -->
-        <script src="assets/js/js.js"></script>
+        <!-- SCRIPTS 
+        <script src="assets/js/Particles.js"></script>
+        <script src="assets/js/js.js"></script> -->
+
+
+        <script src ="assets/js/canvas.js"></script>
+
+
+        <script src = "assets/js/magic_text.js"></script>
+
     </body>
 </html>
