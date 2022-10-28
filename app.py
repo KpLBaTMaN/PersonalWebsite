@@ -1,8 +1,6 @@
 from flask import Flask, redirect, url_for, request, render_template
 from flask_assets import Environment, Bundle
 import os
-
-
 import random
 
 
