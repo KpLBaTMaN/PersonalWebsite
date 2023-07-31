@@ -1,52 +1,49 @@
-from flask import Flask, redirect, url_for, request, render_template
-from flask_assets import Environment, Bundle
-import os
-import random
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+app = FastAPI(title="Personal Website")
+
+# Instantiate the Jinja2 templates for rendering HTML
+templates = Jinja2Templates(directory="frontend/src/templates")
 
 
-IMG_FOLDER = os.path.join('static', '/img/')
+# Define routes for different sections
+
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
-def random_andrew_quote():
-    """
-    return a random quote from Andrew Brown
-    """
-    quotes = [
-        "Instagram is not the answer.",
-        "You can discover everything you need to know about everything by looking at your hands",
-        "Being born was the most influential thing that’s ever happened to me, for myself.",
-        "When Life Gives You Big Problems, Just Be Happy You Forgot All Your Little Problems.",
-        "The Lack Of Emotion In My Face Doesn't Mean I'm Unhappy.",
-        "When The First Animal Went Extinct That Should've Been A Sign.",
-        "How Can Mirrors Be Real If Our Eyes Aren't Real."
-    ]
-    quote = "%s -- Andrew Brown" % random.choice(quotes)
-    return quote
+@app.get("/about", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
 
-print("Loading App")
-APP = Flask(__name__,
-    static_url_path='',
-    static_folder="web/static/",
-    template_folder="web/templates/")
 
-APP.config['UPLOAD_FOLDER'] = IMG_FOLDER
+# @app.get("/blog", response_class=HTMLResponse)
+# async def blog(request: Request):
+#     return templates.TemplateResponse("blog.html", {"request": request, "blog_posts": blog_posts})
 
-@APP.route("/")
-def home():
-    quote = random_andrew_quote()
-    intro_image = os.path.join(APP.config['UPLOAD_FOLDER'], 'intro_background.jpg')
-    return render_template('index.html', 
-                           user_image=intro_image, 
-                           random_quote=quote)
 
-@APP.route("/image")
-def image():
-    return render_template("")
-    
-@APP.route('/hello/<name>')
-def hello_name(name):
-   return 'Hello %s!' % name
- 
-if __name__ == '__main__':
-    APP.debug=True
-    APP.run(host='0.0.0.0', port=80)
+
+# Route to handle the contact form submission
+@app.post("/contact")
+async def contact_form(email: str, message: str):
+    # Process the email and message
+    # send an email to myself or store the messages in a database
+    pass
+
+
+# Route to serve downloadable resume
+@app.get("/resume")
+async def download_resume():
+    # Return the resume file for download
+    pass
+
+
+
+# Start the server with uvicorn
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)
